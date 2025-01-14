@@ -1,0 +1,11 @@
+
+---
+
+## 5. `config/db_config.yaml` (Optional)
+
+database:
+  host: "localhost"
+  port: 5432
+  user: "db_user"
+  password: "db_pass"
+  name: "retail_db"
