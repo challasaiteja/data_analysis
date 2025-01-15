@@ -7,10 +7,10 @@ This system loads retail purchase data, performs data analysis (top-selling prod
 ## Features
 1. **Data Generation**: Creates synthetic data if not provided.
 2. **Data Loading & Validation**: Ensures schema correctness using Pandas.
-3. **Analysis**: Finds top-selling products/categories, visualizes results.
+3. **Analysis**: Finds top-selling products/categories, and visualizes results.
 4. **Clustering**: Groups customers via K-Means based on spending habits.
 5. **Recommendation**: Collaborative filtering with Surprise library.
-6. **Reporting**: Generates a PDF summarizing insights, clusters, and recommendations.
+6. **Reporting**: Generates an HTML page summarizing insights, clusters, and recommendations.
 7. **Security**: Includes AES-256 encryption examples and RBAC stubs.
 8. **Logging**: Structured logging with unique correlation IDs.
 9. **Filtering**: Allows date/category-based filtering.
