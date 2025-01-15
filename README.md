@@ -2,7 +2,7 @@
 # Retail Analytics & Recommendation System
 
 ## Overview
-This system loads retail purchase data, performs data analysis (top-selling products, average spending), clusters customers into segments (High Spenders, Frequent Buyers, etc.), and provides product recommendations using collaborative filtering.
+This system loads retail purchase data, performs data analysis (top-selling products, average spending), clusters customers into segments (High Spenders, Moderate Spenders, etc.), and provides product recommendations using collaborative filtering.
 
 ## Features
 1. **Data Generation**: Creates synthetic data if not provided.
