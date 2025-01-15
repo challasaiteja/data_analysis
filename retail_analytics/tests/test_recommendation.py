@@ -1,3 +1,6 @@
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../')))
 import pytest
 import pandas as pd
 from src.recommendations import build_collaborative_filtering_model, recommend_for_customer
@@ -14,3 +17,8 @@ def test_recommend_for_customer():
     algo = build_collaborative_filtering_model(df)
     recommendations = recommend_for_customer(algo, "C1", df, top_n=2)
     assert len(recommendations) == 2  # "C1" has purchased P1, P4 => others are P2, P3 => top 2
+
+    print(recommendations)
+
+if __name__ == "__main__":
+    test_recommend_for_customer()

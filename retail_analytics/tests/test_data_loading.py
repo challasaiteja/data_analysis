@@ -1,3 +1,6 @@
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../')))
 import pytest
 import pandas as pd
 from src.data_loading import load_and_validate_purchases, filter_data
@@ -14,6 +17,8 @@ def test_load_and_validate_purchases():
     loaded_df = load_and_validate_purchases("tests/test_purchases.csv")
     assert loaded_df.shape[0] == 2
 
+    print(loaded_df)
+
 def test_filter_data():
     data = {
         "CustomerID": ["C1", "C2", "C3"],
@@ -26,3 +31,9 @@ def test_filter_data():
     # Filter by category
     filtered = filter_data(df, category="Books")
     assert len(filtered) == 2
+
+    print(filtered)
+
+if __name__ == "__main__":
+    test_load_and_validate_purchases()
+    test_filter_data()

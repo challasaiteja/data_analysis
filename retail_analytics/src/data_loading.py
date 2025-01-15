@@ -1,7 +1,10 @@
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../')))
 import pandas as pd
 import datetime
 import re
-from logging_utils import get_logger, log_structured
+from src.logging_utils import get_logger, log_structured
 
 logger = get_logger(__name__)
 

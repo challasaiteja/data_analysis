@@ -3,13 +3,14 @@ import json
 import time
 import uuid
 
+
 def get_logger(name: str, log_level=logging.INFO):
     logger = logging.getLogger(name)
     logger.setLevel(log_level)
 
     if not logger.handlers:
         stream_handler = logging.StreamHandler()
-        formatter = logging.Formatter('%(asctime)s %(name)s [%(levelname)s] %(message)s')
+        formatter = logging.Formatter('%(asctime)s %(name)s [%(levelname)s] %(message)s\n\n')
         stream_handler.setFormatter(formatter)
         logger.addHandler(stream_handler)
 

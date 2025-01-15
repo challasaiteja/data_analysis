@@ -1,14 +1,34 @@
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../')))
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from logging_utils import get_logger, log_structured
+from src.logging_utils import get_logger, log_structured
 
 logger = get_logger(__name__)
 
 def analyze_data(df: pd.DataFrame):
+    """
+    Analyze the purchase data and generate insights.
+
+    Args:
+        df: DataFrame with purchase data, including columns
+            - CustomerID
+            - ProductID
+            - Category
+            - PurchaseAmount
+
+    Returns:
+        dict: A dictionary containing the insights:
+            - top_products: Series of top-selling products by revenue
+            - category_sales: Series of top categories by revenue
+            - avg_spend_per_customer: average spending per customer
+    """
     # Top-selling products
     product_sales = df.groupby("ProductID")["PurchaseAmount"].sum().sort_values(ascending=False).head(10)
     log_structured(logger, "info", "Top products", top_products=product_sales.to_dict())
+    #print(f"Product Sales: {product_sales}")
 
     # Top categories
     category_sales = df.groupby("Category")["PurchaseAmount"].sum().sort_values(ascending=False)

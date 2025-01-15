@@ -1,0 +1,41 @@
+h1{
+    text-align: center;
+}
+.dashboardBody{
+    background-color: rgb(180, 238, 238);
+    display: flex;
+    height: 80vh;
+    width: 99vw;
+}
+.dashboardBody img{
+    width: 70vw;
+}
+.insightSection{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 99vw;
+    background-color: rgb(231, 170, 231);
+
+}
+.insightSection div{
+    margin: 1vh;
+}
+.recommendations{
+    display: grid;
+    grid-template-columns: auto;
+    padding:1vh;
+    background-color: rgb(205, 240, 136);
+}
+.number{
+    text-align: center;
+    font-size: 5vh;
+    font-weight: bold;
+    margin: 1vh;
+    background-color: rgb(235, 162, 162);
+}
+th{
+    text-align: center;
+}
+.insightSection table{
+    width: 100%;
+}

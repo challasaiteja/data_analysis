@@ -9,6 +9,11 @@ NUM_PRODUCTS = 50
 NUM_PURCHASES = 5000
 
 def generate_customers():
+    """
+    Generate a list of unique customer IDs.
+
+    The customer IDs are just the first 8 characters of a UUID4.
+    """
     customers = []
     for _ in range(NUM_CUSTOMERS):
         customer_id = str(uuid.uuid4())[:8]  # short unique ID
@@ -16,14 +21,38 @@ def generate_customers():
     return customers
 
 def generate_products():
+    """
+    Generate a list of products with unique IDs and random categories.
+
+    The product IDs are formatted as 'PXXX', where XXX represents a three-digit number.
+    Each product is randomly assigned to a category from the predefined CATEGORIES list.
+
+    Returns:
+        list: A list of tuples, each containing a product ID and its category.
+    """
     products = []
     for i in range(NUM_PRODUCTS):
-        product_id = f"P{i:03d}"
-        category = random.choice(CATEGORIES)
-        products.append((product_id, category))
+        product_id = f"P{i:03d}"  # Create a unique product ID
+        category = random.choice(CATEGORIES)  # Randomly select a category
+        products.append((product_id, category))  # Add the product to the list
     return products
 
 def generate_purchases(customers, products):
+    """
+    Generate a list of purchases, where each purchase is a tuple representing the customer ID,
+    product ID, category, purchase amount, and purchase date.
+
+    The purchases are randomly distributed across the customers and products, with random
+    purchase amounts and dates within the last year.
+
+    Args:
+        customers: A list of unique customer IDs.
+        products: A list of tuples, each containing a product ID and its category.
+
+    Returns:
+        list: A list of tuples, each containing the customer ID, product ID, category,
+        purchase amount, and purchase date.
+    """
     purchases = []
     today = datetime.now()
     for _ in range(NUM_PURCHASES):
