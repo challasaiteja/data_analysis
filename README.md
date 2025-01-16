@@ -19,7 +19,7 @@ This system loads retail purchase data, performs data analysis (top-selling prod
 ## Installation & Setup
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/retail-analytics.git
+    git clone https://github.com/challasaiteja/data_analysis.git
     ```
 2. Install dependencies:
     ```bash
