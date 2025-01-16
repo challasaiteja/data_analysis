@@ -7,7 +7,6 @@ from data_loading import load_and_validate_purchases, filter_data
 from data_analysis import analyze_data
 from clustering import create_customer_clusters
 from recommendations import build_collaborative_filtering_model, recommend_for_customer, explain_recommendation
-#from src.reporting import generate_pdf_report
 from src.logging_utils import get_logger, log_structured
 from src.reporting import generate_pdf_report
 logger = get_logger(__name__)
